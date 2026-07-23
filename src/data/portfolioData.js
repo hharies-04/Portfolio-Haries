@@ -45,6 +45,20 @@ export const skills = {
 
 export const projects = [
   {
+    id: "aura-flow-reactor",
+    title: "Aura Flow Reactor System",
+    category: "Machine Learning",
+    description: "An intelligent flow reactor automation platform engineered for predictive parameter analytics, real-time chemical process optimization, and adaptive feedback control.",
+    tags: ["Python", "Machine Learning", "AI System", "Flow Reactor", "Analytics"],
+    githubUrl: "https://github.com/hharies-04/Aura-Flow-Reactor",
+    liveUrl: "https://hharies-04.github.io/Aura-Flow-Reactor/",
+    language: "Python / AI",
+    outputType: "ml_simulation",
+    outputDetails: {
+      type: "Aura Flow Reactor Simulator"
+    }
+  },
+  {
     id: "mammographic-mass-classification",
     title: "Mammographic Mass Classification",
     category: "Machine Learning",
