@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, Send, Sparkles, CheckCircle2, Copy } from 'lucide-react';
+import { Mail, Send, Sparkles, CheckCircle2, Copy, ExternalLink } from 'lucide-react';
 import { GithubIcon, LinkedinIcon } from './SocialIcons';
 import { personalInfo } from '../data/portfolioData';
 
@@ -11,17 +11,24 @@ export default function Contact() {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (formData.name && formData.email && formData.message) {
+      // Form submission fallback via mailto trigger as well
+      const mailtoUrl = `mailto:${personalInfo.email}?subject=${encodeURIComponent(formData.subject || 'Portfolio Direct Inquiry from ' + formData.name)}&body=${encodeURIComponent('From: ' + formData.name + ' (' + formData.email + ')\n\n' + formData.message)}`;
+      window.location.href = mailtoUrl;
+      
       setSubmitted(true);
       setFormData({ name: '', email: '', subject: '', message: '' });
       setTimeout(() => setSubmitted(false), 4000);
     }
   };
 
-  const handleCopyEmail = () => {
+  const handleCopyEmail = (e) => {
+    e.stopPropagation();
     navigator.clipboard.writeText(personalInfo.email);
     setCopied(true);
     setTimeout(() => setCopied(false), 2500);
   };
+
+  const mailtoLink = `mailto:${personalInfo.email}?subject=${encodeURIComponent('Inquiry for Haries H | Software Engineering Role')}`;
 
   return (
     <section id="contact" style={{ padding: '5rem 0 6rem 0', background: 'rgba(10, 13, 26, 0.6)' }}>
@@ -36,7 +43,7 @@ export default function Contact() {
             Let's <span className="gradient-text">Connect & Collaborate</span>
           </h2>
           <p style={{ color: 'var(--text-muted)', maxWidth: '600px', margin: '0.8rem auto 0 auto' }}>
-            Interested in hiring for a software engineering position or discussing a project? Drop a message below!
+            Interested in hiring for a software engineering position or discussing a project? Click the email card below to launch your email app directly!
           </p>
         </div>
 
@@ -69,22 +76,67 @@ export default function Contact() {
               </p>
 
               <div style={{ display: 'flex', flexDirection: 'column', gap: '1.2rem', marginBottom: '2rem' }}>
-                {/* Email Item */}
-                <div className="flex-row items-center justify-between" style={{ padding: '0.8rem 1rem', background: 'rgba(255,255,255,0.04)', borderRadius: '12px' }}>
+                
+                {/* DIRECT MAIL APP LINK ITEM */}
+                <a
+                  href={mailtoLink}
+                  title="Click to launch your email app and compose a message"
+                  className="flex-row items-center justify-between"
+                  style={{
+                    padding: '0.9rem 1.1rem',
+                    background: 'rgba(0, 180, 216, 0.12)',
+                    border: '1px solid var(--cyan-accent)',
+                    borderRadius: '12px',
+                    textDecoration: 'none',
+                    color: '#fff',
+                    transition: 'transform 0.2s, background 0.2s',
+                    cursor: 'pointer'
+                  }}
+                >
                   <div className="flex-row items-center gap-sm">
-                    <Mail size={20} color="var(--cyan-accent)" />
+                    <div
+                      style={{
+                        width: '38px',
+                        height: '38px',
+                        borderRadius: '10px',
+                        background: 'linear-gradient(135deg, #0077b6, #00b4d8)',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center'
+                      }}
+                    >
+                      <Mail size={20} color="#fff" />
+                    </div>
                     <div>
-                      <div style={{ fontSize: '0.75rem', color: 'var(--text-subtle)' }}>Direct Email</div>
-                      <div style={{ fontSize: '0.9rem', color: '#fff', fontWeight: 600 }}>{personalInfo.email}</div>
+                      <div style={{ fontSize: '0.75rem', color: 'var(--cyan-accent)', fontWeight: 600 }}>
+                        Click to Open Email App ✉️
+                      </div>
+                      <div style={{ fontSize: '0.92rem', color: '#fff', fontWeight: 700 }}>
+                        {personalInfo.email}
+                      </div>
                     </div>
                   </div>
-                  <button onClick={handleCopyEmail} className="btn-secondary" style={{ padding: '0.3rem 0.6rem', fontSize: '0.75rem' }}>
-                    {copied ? <CheckCircle2 size={14} color="#22c55e" /> : <Copy size={14} />}
-                  </button>
-                </div>
+
+                  <div className="flex-row items-center gap-xs">
+                    <button
+                      onClick={handleCopyEmail}
+                      className="btn-secondary"
+                      title="Copy Email Address"
+                      style={{ padding: '0.35rem 0.65rem', fontSize: '0.75rem' }}
+                    >
+                      {copied ? <CheckCircle2 size={14} color="#22c55e" /> : <Copy size={14} />}
+                    </button>
+                  </div>
+                </a>
 
                 {/* GitHub Item */}
-                <a href={personalInfo.github} target="_blank" rel="noreferrer" className="flex-row items-center gap-sm" style={{ padding: '0.8rem 1rem', background: 'rgba(255,255,255,0.04)', borderRadius: '12px', textDecoration: 'none', color: '#fff' }}>
+                <a
+                  href={personalInfo.github}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex-row items-center gap-sm"
+                  style={{ padding: '0.8rem 1rem', background: 'rgba(255,255,255,0.04)', borderRadius: '12px', textDecoration: 'none', color: '#fff' }}
+                >
                   <GithubIcon size={20} color="var(--indigo-primary)" />
                   <div>
                     <div style={{ fontSize: '0.75rem', color: 'var(--text-subtle)' }}>GitHub Profile</div>
@@ -93,13 +145,20 @@ export default function Contact() {
                 </a>
 
                 {/* LinkedIn Item */}
-                <a href={personalInfo.linkedin} target="_blank" rel="noreferrer" className="flex-row items-center gap-sm" style={{ padding: '0.8rem 1rem', background: 'rgba(255,255,255,0.04)', borderRadius: '12px', textDecoration: 'none', color: '#fff' }}>
+                <a
+                  href={personalInfo.linkedin}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex-row items-center gap-sm"
+                  style={{ padding: '0.8rem 1rem', background: 'rgba(255,255,255,0.04)', borderRadius: '12px', textDecoration: 'none', color: '#fff' }}
+                >
                   <LinkedinIcon size={20} color="var(--violet-accent)" />
                   <div>
                     <div style={{ fontSize: '0.75rem', color: 'var(--text-subtle)' }}>LinkedIn Profile</div>
-                    <div style={{ fontSize: '0.9rem', fontWeight: 600 }}>linkedin.com/in/hharies-04</div>
+                    <div style={{ fontSize: '0.9rem', fontWeight: 600 }}>linkedin.com/in/haries-h-331223373</div>
                   </div>
                 </a>
+
               </div>
             </div>
 
@@ -125,8 +184,8 @@ export default function Contact() {
             {submitted ? (
               <div style={{ padding: '2rem', textAlign: 'center', background: 'rgba(34, 197, 94, 0.1)', border: '1px solid #22c55e', borderRadius: '12px' }}>
                 <CheckCircle2 size={40} color="#22c55e" style={{ margin: '0 auto 0.8rem auto' }} />
-                <h4 style={{ color: '#fff', fontSize: '1.2rem', marginBottom: '0.4rem' }}>Message Received!</h4>
-                <p style={{ color: '#cbd5e1', fontSize: '0.9rem' }}>Thank you for reaching out. I will respond to your message promptly.</p>
+                <h4 style={{ color: '#fff', fontSize: '1.2rem', marginBottom: '0.4rem' }}>Email App Opened!</h4>
+                <p style={{ color: '#cbd5e1', fontSize: '0.9rem' }}>Opening your email application to send the message directly to {personalInfo.email}.</p>
               </div>
             ) : (
               <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1.2rem' }}>
@@ -179,7 +238,7 @@ export default function Contact() {
                 </div>
 
                 <button type="submit" className="btn-primary" style={{ justifyCenter: 'center', width: '100%', padding: '0.8rem' }}>
-                  <Send size={16} /> Send Direct Message
+                  <Send size={16} /> Open Email App & Send Message
                 </button>
               </form>
             )}
