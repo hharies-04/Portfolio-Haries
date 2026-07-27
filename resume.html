@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resume - Haries H | Portfolio</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+    
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: #0b0f19;
+      color: #f8fafc;
+      padding: 2.5rem 1rem;
+      line-height: 1.6;
+    }
+    .resume-container {
+      max-width: 860px;
+      margin: 0 auto;
+      background: #13192b;
+      padding: 3.5rem;
+      border-radius: 20px;
+      border: 1px solid rgba(99, 102, 241, 0.3);
+      box-shadow: 0 25px 50px rgba(0,0,0,0.6);
+    }
+    h1, h2, h3, h4 { font-family: 'Outfit', sans-serif; }
+    
+    header {
+      border-bottom: 2px solid #6366f1;
+      padding-bottom: 1.8rem;
+      margin-bottom: 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+    .header-left { flex: 1; min-width: 280px; }
+    .name { font-size: 2.4rem; font-weight: 800; color: #fff; letter-spacing: -0.02em; }
+    .subtitle { font-size: 1.1rem; color: #38bdf8; font-weight: 600; margin-top: 0.3rem; }
+    .bio-text { font-size: 0.92rem; color: #cbd5e1; margin-top: 0.8rem; line-height: 1.6; }
+    
+    .contact-info {
+      font-size: 0.88rem;
+      color: #94a3b8;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+      text-align: right;
+    }
+    .contact-info a { color: #818cf8; text-decoration: none; font-weight: 500; }
+    .contact-info a:hover { text-decoration: underline; color: #38bdf8; }
+    
+    .section-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #a5b4fc;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      padding-bottom: 0.4rem;
+      margin: 2rem 0 1.2rem 0;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    
+    .item-card {
+      margin-bottom: 1.4rem;
+      background: rgba(255,255,255,0.03);
+      padding: 1.2rem;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+    .item-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: 700;
+      color: #fff;
+      font-size: 1.05rem;
+      margin-bottom: 0.2rem;
+    }
+    .item-sub { font-size: 0.88rem; color: #38bdf8; font-weight: 600; margin-bottom: 0.5rem; }
+    .item-desc { font-size: 0.9rem; color: #cbd5e1; }
+    
+    ul { padding-left: 1.2rem; color: #cbd5e1; font-size: 0.9rem; margin-top: 0.4rem; }
+    li { margin-bottom: 0.3rem; }
+    
+    .skills-flex {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+    }
+    .skill-pill {
+      background: rgba(99, 102, 241, 0.15);
+      border: 1px solid rgba(99, 102, 241, 0.3);
+      color: #cbd5e1;
+      padding: 0.4rem 0.9rem;
+      border-radius: 20px;
+      font-size: 0.82rem;
+      font-weight: 500;
+    }
+    
+    .print-btn {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      background: linear-gradient(135deg, #4f46e5, #06b6d4);
+      color: #fff;
+      border: none;
+      padding: 0.85rem 1.6rem;
+      border-radius: 30px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      cursor: pointer;
+      box-shadow: 0 8px 25px rgba(6, 182, 212, 0.4);
+      transition: transform 0.2s;
+    }
+    .print-btn:hover { transform: scale(1.05); }
+
+    @media print {
+      body { background: #fff; color: #1e293b; padding: 0; }
+      .resume-container { background: #fff; color: #1e293b; border: none; box-shadow: none; padding: 0; max-width: 100%; }
+      header { border-color: #334155; }
+      .name { color: #0f172a; }
+      .subtitle, .item-sub { color: #2563eb; }
+      .contact-info, .item-desc, ul { color: #334155; }
+      .contact-info a { color: #2563eb; }
+      .section-title { color: #1e40af; border-color: #cbd5e1; }
+      .item-card { background: #f8fafc; border: 1px solid #e2e8f0; }
+      .item-header { color: #0f172a; }
+      .skill-pill { background: #eff6ff; border-color: #bfdbfe; color: #1e40af; }
+      .print-btn { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="resume-container">
+    
+    <!-- HEADER -->
+    <header>
+      <div class="header-left">
+        <div class="name">Haries H</div>
+        <div class="subtitle">B.E. Computer Science Engineering (2026)</div>
+        <div class="bio-text">
+          A passionate and motivated final-year B.E. CSE student at Sathyabama University, Chennai, with strong knowledge in Python, Machine Learning, Data Science, and Artificial Intelligence. Experienced in building AI-based systems through academic projects and full-stack web applications.
+        </div>
+      </div>
+      <div class="contact-info">
+        <div>📧 <a href="mailto:hharies135@gmail.com">hharies135@gmail.com</a></div>
+        <div>📞 Phone: 9360691870</div>
+        <div>🌐 Portfolio: <a href="https://hharies-04.github.io/Portfolio-Haries/" target="_blank">hharies-04.github.io/Portfolio-Haries</a></div>
+        <div>💻 GitHub: <a href="https://github.com/hharies-04" target="_blank">github.com/hharies-04</a></div>
+        <div>💼 LinkedIn: <a href="https://www.linkedin.com/in/haries-h-331223373" target="_blank">linkedin.com/in/haries-h-331223373</a></div>
+      </div>
+    </header>
+
+    <!-- EDUCATION SECTION -->
+    <div class="section-title">Education</div>
+    
+    <div class="item-card">
+      <div class="item-header">
+        <span>Sathyabama University (Sathyabama Institute Of Science And Technology)</span>
+        <span>2022 - 2026</span>
+      </div>
+      <div class="item-sub">BE / B.Tech - Computer Science Engineering</div>
+      <div class="item-desc">Percentage: <strong>79%</strong> | Focus on Data Structures, Algorithms, Machine Learning & Artificial Intelligence.</div>
+    </div>
+
+    <div class="item-card">
+      <div class="item-header">
+        <span>State Board Of Tamilnadu (Sreeram Matric Higher Secondary School)</span>
+        <span>2022</span>
+      </div>
+      <div class="item-sub">PUC (12th Standard)</div>
+      <div class="item-desc">Percentage: <strong>73.5%</strong></div>
+    </div>
+
+    <div class="item-card">
+      <div class="item-header">
+        <span>State Board Of Tamilnadu (Sreeram Matric Higher Secondary School)</span>
+        <span>2020</span>
+      </div>
+      <div class="item-sub">SSLC (10th Standard)</div>
+      <div class="item-desc">Percentage: <strong>82%</strong></div>
+    </div>
+
+    <!-- SKILLS SECTION -->
+    <div class="section-title">Skills & Technologies</div>
+    <div class="skills-flex">
+      <span class="skill-pill">Python</span>
+      <span class="skill-pill">Machine Learning</span>
+      <span class="skill-pill">Artificial Intelligence</span>
+      <span class="skill-pill">Data Science</span>
+      <span class="skill-pill">React JS</span>
+      <span class="skill-pill">JavaScript</span>
+      <span class="skill-pill">HTML5 & CSS3</span>
+      <span class="skill-pill">Core Java</span>
+      <span class="skill-pill">C</span>
+      <span class="skill-pill">Flutter</span>
+      <span class="skill-pill">DBMS & SQL</span>
+      <span class="skill-pill">Data Structures</span>
+      <span class="skill-pill">GitHub</span>
+      <span class="skill-pill">Analytical Skills</span>
+      <span class="skill-pill">Critical Thinking</span>
+    </div>
+
+    <!-- PROJECTS SECTION -->
+    <div class="section-title">Academic & Technical Projects</div>
+
+    <div class="item-card">
+      <div class="item-header">
+        <span>Mammographic Mass Classification</span>
+        <span>Python / Scikit-Learn</span>
+      </div>
+      <div class="item-sub"><a href="https://github.com/hharies-04/Breast-Cancer-Severity-Prediction" target="_blank" style="color:#38bdf8; text-decoration:none;">github.com/hharies-04/Breast-Cancer-Severity-Prediction ↗</a></div>
+      <div class="item-desc">
+        A machine learning project to classify mammographic masses as benign or malignant using Random Forest, SVM, Logistic Regression, and MLP classifiers with ensemble voting.
+      </div>
+    </div>
+
+    <div class="item-card">
+      <div class="item-header">
+        <span>Adaptive Intrusion Detection And Response System Using RL</span>
+        <span>Python / Q-Learning</span>
+      </div>
+      <div class="item-sub"><a href="https://github.com/hharies-04/Intrusion-Detection-Response-System-RL" target="_blank" style="color:#38bdf8; text-decoration:none;">github.com/hharies-04/Intrusion-Detection-Response-System-RL ↗</a></div>
+      <div class="item-desc">
+        RL-based adaptive intrusion detection system that learns and responds to network anomalies using Python and Machine Learning techniques.
+      </div>
+    </div>
+
+    <div class="item-card">
+      <div class="item-header">
+        <span>Medical Imaging Using OCT Images</span>
+        <span>Python / CNN</span>
+      </div>
+      <div class="item-sub">Deep Learning Medical Computer Vision</div>
+      <div class="item-desc">
+        CNN-based retinal disease classification from OCT images — automatically detects CNV, DME, Drusen, and Normal conditions using deep learning and image augmentation techniques.
+      </div>
+    </div>
+
+    <!-- CERTIFICATIONS SECTION -->
+    <div class="section-title">Certifications & Experience</div>
+
+    <div class="item-card">
+      <div class="item-header">
+        <span>Fullstack Web Development - Tap Academy</span>
+        <span>2026</span>
+      </div>
+      <div class="item-desc">
+        Mastered Core Java, Advanced Java (JDBC, J2EE, Servlets), Spring, Hibernate, MySQL, and Frontend Development. Applied skills in multiple projects, including a Capstone Online Food Delivery Application showcasing full-stack development from database integration to responsive UI design.
+      </div>
+    </div>
+
+    <div class="item-card">
+      <div class="item-header">
+        <span>Computer Vision - Wenoxo</span>
+        <span>2025</span>
+      </div>
+      <div class="item-desc">
+        Worked on image processing and object detection using advanced Computer Vision techniques. Preprocessed and augmented image datasets to improve model accuracy and performance. Built real-time video/image analysis pipelines using OpenCV and Python.
+      </div>
+    </div>
+
+    <div class="item-card">
+      <div class="item-header">
+        <span>AI/ML Intern - Business Gateways International</span>
+        <span>2025</span>
+      </div>
+      <div class="item-desc">
+        Cleaned, preprocessed, and prepared datasets for model training and analysis. Gained hands-on experience with Large Language Models using Ollama on real-time projects.
+      </div>
+    </div>
+
+    <div class="item-card">
+      <div class="item-header">
+        <span>Machine Learning - Cognibot & Imarticus</span>
+        <span>2024</span>
+      </div>
+      <div class="item-desc">
+        Data collection, feature engineering, and transforming raw data into distinct patterns. Image classification using Convolutional Neural Networks (CNN).
+      </div>
+    </div>
+
+    <!-- LANGUAGES & HOBBIES -->
+    <div class="section-title">Languages & Interests</div>
+    <div style="display: flex; gap: 2rem; font-size: 0.9rem; color: #cbd5e1;">
+      <div><strong>Languages:</strong> English, Tamil</div>
+      <div><strong>Hobbies:</strong> Music, Movies, Volleyball, Cricket</div>
+    </div>
+
+  </div>
+
+  <button class="print-btn" onclick="window.print()">🖨️ Print / Save as PDF</button>
+</body>
+</html>
