@@ -159,6 +159,20 @@ export const projects = [
     }
   },
   {
+    id: "tap-academy-clone",
+    title: "Tap Academy Web UI Clone",
+    category: "UI Clones",
+    description: "Responsive web application clone of Tap Academy platform featuring course catalog display, interactive curriculum module viewer, and student enrollment portal.",
+    tags: ["JavaScript", "HTML5", "CSS Flexbox", "Course Portal", "UI Clone"],
+    githubUrl: "https://github.com/hharies-04/Tap-Academy-Clone",
+    liveUrl: "https://hharies-04.github.io/Tap-Academy-Clone/",
+    language: "JavaScript / CSS",
+    outputType: "live_site",
+    outputDetails: {
+      type: "Live Tap Academy Clone App"
+    }
+  },
+  {
     id: "fortuner-product-landing",
     title: "Fortuner Product Landing Showcase",
     category: "Web Apps",
