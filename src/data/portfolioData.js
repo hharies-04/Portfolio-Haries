@@ -51,8 +51,8 @@ export const projects = [
     category: "Machine Learning",
     description: "An intelligent flow reactor automation platform engineered for predictive parameter analytics, real-time chemical process optimization, and adaptive feedback control.",
     tags: ["Python", "Machine Learning", "AI System", "Flow Reactor", "Analytics"],
-    githubUrl: "https://github.com/hharies-04/Aura-Flow-Reactor",
-    liveUrl: "https://github.com/hharies-04/Aura-Flow-Reactor",
+    githubUrl: "https://github.com/hharies-04/Auraflow-React",
+    liveUrl: "https://hharies-04.github.io/Auraflow-React/",
     language: "Python / AI",
     outputType: "ml_simulation",
     outputDetails: {
@@ -66,7 +66,7 @@ export const projects = [
     description: "A machine learning project to classify mammographic masses as benign or malignant using Random Forest, SVM, Logistic Regression, and MLP classifiers with ensemble voting.",
     tags: ["Python", "Machine Learning", "Scikit-Learn", "Ensemble Voting"],
     githubUrl: "https://github.com/hharies-04/Breast-Cancer-Severity-Prediction",
-    liveUrl: "https://github.com/hharies-04/Breast-Cancer-Severity-Prediction",
+    liveUrl: "https://hharies-04.github.io/Breast-Cancer-Severity-Prediction/",
     language: "Python / Jupyter",
     outputType: "ml_simulation",
     outputDetails: {
@@ -94,8 +94,8 @@ export const projects = [
     category: "Machine Learning",
     description: "CNN-based retinal disease classification from OCT images — automatically detects CNV, DME, Drusen, and Normal conditions using deep learning and image augmentation techniques.",
     tags: ["Python", "Computer Vision", "CNN", "Deep Learning", "Medical AI"],
-    githubUrl: "https://github.com/hharies-04/Medical-Imaging-OCT",
-    liveUrl: "https://github.com/hharies-04/Medical-Imaging-OCT",
+    githubUrl: "https://github.com/hharies-04/Medical-Imaging-OCT-Retinal-Disease-Classification",
+    liveUrl: "https://hharies-04.github.io/Medical-Imaging-OCT-Retinal-Disease-Classification/",
     language: "Python / TensorFlow",
     outputType: "ml_simulation",
     outputDetails: {
