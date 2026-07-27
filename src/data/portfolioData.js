@@ -1,7 +1,7 @@
 export const personalInfo = {
   name: "Haries H",
   title: "B.E. Computer Science and Engineering",
-  tagline: "A passionate final-year CSE student specialized in Python, Machine Learning, Data Science, and Artificial Intelligence.",
+  tagline: "A passionate B.E. Computer Science Graduate specialized in Python, Machine Learning, Data Science, and Artificial Intelligence.",
   location: "Chennai, India",
   phone: "9360691870",
   github: "https://github.com/hharies-04",
@@ -10,7 +10,7 @@ export const personalInfo = {
   website: "https://hharies-04.github.io/Portfolio-Haries/",
   linkedin: "https://www.linkedin.com/in/haries-h-331223373",
   avatar: "/profile.jpg",
-  bio: "Motivated final-year B.E. Computer Science student at Sathyabama Institute of Science and Technology, Chennai. Strong knowledge in Python, Machine Learning, Data Science, and Artificial Intelligence. Experienced in building AI systems, medical image classifiers, and full-stack web applications."
+  bio: "Motivated B.E. Computer Science Graduate from Sathyabama Institute of Science and Technology, Chennai (Class of 2026). Strong knowledge in Python, Machine Learning, Data Science, and Artificial Intelligence. Experienced in building AI systems, medical image classifiers, and full-stack web applications."
 };
 
 export const stats = [
