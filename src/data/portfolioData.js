@@ -46,6 +46,20 @@ export const skills = {
 
 export const projects = [
   {
+    id: "tap-academy-portal",
+    title: "Tap Academy Interactive Portal",
+    category: "Web Apps",
+    description: "Responsive full-stack learning portal clone of Tap Academy platform featuring course catalog filtering, module curriculum timeline, student enrollment forms, and custom CSS Flexbox design.",
+    tags: ["JavaScript", "HTML5", "CSS Flexbox", "Course Portal", "UI Component"],
+    githubUrl: "https://github.com/hharies-04/Tap-Academy-Portal",
+    liveUrl: "https://hharies-04.github.io/Tap-Academy-Portal/",
+    language: "JavaScript / HTML",
+    outputType: "live_site",
+    outputDetails: {
+      type: "Live Tap Academy Web Portal"
+    }
+  },
+  {
     id: "aura-flow-reactor",
     title: "Aura Flow Reactor System",
     category: "Machine Learning",
@@ -156,20 +170,6 @@ export const projects = [
     outputType: "live_site",
     outputDetails: {
       type: "Live LinkedIn Network Web App"
-    }
-  },
-  {
-    id: "tap-academy-portal",
-    title: "Tap Academy Interactive Portal",
-    category: "Web Apps",
-    description: "Responsive full-stack learning portal clone of Tap Academy platform featuring course catalog filtering, module curriculum timeline, student enrollment forms, and custom CSS Flexbox design.",
-    tags: ["JavaScript", "HTML5", "CSS Flexbox", "Course Portal", "UI Component"],
-    githubUrl: "https://github.com/hharies-04/Tap-Academy-Portal",
-    liveUrl: "https://hharies-04.github.io/Tap-Academy-Portal/",
-    language: "JavaScript / HTML",
-    outputType: "live_site",
-    outputDetails: {
-      type: "Live Tap Academy Web Portal"
     }
   },
   {
