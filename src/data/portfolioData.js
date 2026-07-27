@@ -81,7 +81,7 @@ export const projects = [
     description: "RL-based adaptive intrusion detection system that learns and responds to network anomalies and security threats in real-time using Q-learning techniques.",
     tags: ["Python", "Reinforcement Learning", "Q-Learning", "Cybersecurity"],
     githubUrl: "https://github.com/hharies-04/Intrusion-Detection-Response-System-RL",
-    liveUrl: "https://github.com/hharies-04/Intrusion-Detection-Response-System-RL",
+    liveUrl: "https://hharies-04.github.io/Intrusion-Detection-Response-System-RL/",
     language: "Python",
     outputType: "security_simulation",
     outputDetails: {
