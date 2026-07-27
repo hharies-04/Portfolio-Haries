@@ -8,9 +8,9 @@ export default defineConfig({
   build: {
     rollupOptions: {
       output: {
-        entryFileNames: `assets/[name]-tap-v2.js`,
-        chunkFileNames: `assets/[name]-tap-v2.js`,
-        assetFileNames: `assets/[name]-tap-v2.[ext]`
+        entryFileNames: `assets/index.js`,
+        chunkFileNames: `assets/index.js`,
+        assetFileNames: `assets/[name].[ext]`
       }
     }
   }
