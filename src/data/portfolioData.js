@@ -66,7 +66,7 @@ export const projects = [
     description: "A machine learning project to classify mammographic masses as benign or malignant using Random Forest, SVM, Logistic Regression, and MLP classifiers with ensemble voting.",
     tags: ["Python", "Machine Learning", "Scikit-Learn", "Ensemble Voting"],
     githubUrl: "https://github.com/hharies-04/Breast-Cancer-Severity-Prediction",
-    liveUrl: "https://hharies-04.github.io/Breast-Cancer-Severity-Prediction/",
+    liveUrl: "https://github.com/hharies-04/Breast-Cancer-Severity-Prediction",
     language: "Python / Jupyter",
     outputType: "ml_simulation",
     outputDetails: {
@@ -81,7 +81,7 @@ export const projects = [
     description: "RL-based adaptive intrusion detection system that learns and responds to network anomalies and security threats in real-time using Q-learning techniques.",
     tags: ["Python", "Reinforcement Learning", "Q-Learning", "Cybersecurity"],
     githubUrl: "https://github.com/hharies-04/Intrusion-Detection-Response-System-RL",
-    liveUrl: "https://hharies-04.github.io/Intrusion-Detection-Response-System-RL/",
+    liveUrl: "https://github.com/hharies-04/Intrusion-Detection-Response-System-RL",
     language: "Python",
     outputType: "security_simulation",
     outputDetails: {
