@@ -7,6 +7,7 @@ export const personalInfo = {
   github: "https://github.com/hharies-04",
   githubUsername: "hharies-04",
   email: "hharies135@gmail.com",
+  website: "https://hharies-04.github.io/Portfolio-Haries/",
   linkedin: "https://www.linkedin.com/in/haries-h-331223373",
   avatar: "/profile.jpg",
   bio: "Motivated final-year B.E. Computer Science student at Sathyabama Institute of Science and Technology, Chennai. Strong knowledge in Python, Machine Learning, Data Science, and Artificial Intelligence. Experienced in building AI systems, medical image classifiers, and full-stack web applications."
