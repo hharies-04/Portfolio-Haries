@@ -2,9 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { ArrowRight, Download, Sparkles, Upload, CheckCircle2, FileText } from 'lucide-react';
 import { GithubIcon, LinkedinIcon } from './SocialIcons';
 import { personalInfo, stats } from '../data/portfolioData';
+import profilePic from '../assets/profile.jpg';
 
 export default function Hero() {
-  const [profileImg, setProfileImg] = useState(personalInfo.avatar);
+  const [profileImg, setProfileImg] = useState(profilePic);
   const [showUploadMsg, setShowUploadMsg] = useState(false);
   const [typedName, setTypedName] = useState("");
 
