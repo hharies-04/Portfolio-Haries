@@ -16,7 +16,7 @@ export default function Projects() {
 
   const handleOpenLiveOutput = (project, e) => {
     e.stopPropagation();
-    if (project.liveUrl && project.liveUrl.includes('github.io')) {
+    if (project.category !== 'Machine Learning' && project.liveUrl && project.liveUrl.includes('github.io')) {
       window.open(project.liveUrl, '_blank');
     }
     setActiveModalProject(project);
