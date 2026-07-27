@@ -159,17 +159,17 @@ export const projects = [
     }
   },
   {
-    id: "tap-academy-clone",
-    title: "Tap Academy Web UI Clone",
-    category: "UI Clones",
-    description: "Responsive web application clone of Tap Academy platform featuring course catalog display, interactive curriculum module viewer, and student enrollment portal.",
-    tags: ["JavaScript", "HTML5", "CSS Flexbox", "Course Portal", "UI Clone"],
+    id: "tap-academy-portal",
+    title: "Tap Academy Interactive Portal",
+    category: "Web Apps",
+    description: "Responsive full-stack learning portal clone of Tap Academy platform featuring course catalog filtering, module curriculum timeline, student enrollment forms, and custom CSS Flexbox design.",
+    tags: ["JavaScript", "HTML5", "CSS Flexbox", "Course Portal", "UI Component"],
     githubUrl: "https://github.com/hharies-04/Tap-Academy-Portal",
     liveUrl: "https://hharies-04.github.io/Tap-Academy-Portal/",
-    language: "JavaScript / CSS",
+    language: "JavaScript / HTML",
     outputType: "live_site",
     outputDetails: {
-      type: "Live Tap Academy Clone App"
+      type: "Live Tap Academy Web Portal"
     }
   },
   {
