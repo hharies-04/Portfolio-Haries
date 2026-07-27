@@ -12,7 +12,7 @@ export default function Projects() {
 
   const filteredProjects = selectedCategory === 'All'
     ? projects
-    : projects.filter(p => p.category === selectedCategory);
+    : projects.filter(p => p.category === selectedCategory || (p.id === 'tap-academy-portal' && (selectedCategory === 'Web Apps' || selectedCategory === 'UI Clones')));
 
   const handleOpenLiveOutput = (project, e) => {
     e.stopPropagation();
@@ -88,9 +88,16 @@ export default function Projects() {
               <div>
                 {/* Language / Category Badge */}
                 <div className="flex-row items-center justify-between" style={{ marginBottom: '1rem' }}>
-                  <span className="badge badge-violet" style={{ fontSize: '0.75rem' }}>
-                    {project.language}
-                  </span>
+                  <div className="flex-row items-center gap-xs">
+                    <span className="badge badge-violet" style={{ fontSize: '0.75rem' }}>
+                      {project.language}
+                    </span>
+                    {project.id === 'tap-academy-portal' && (
+                      <span className="badge badge-cyan" style={{ fontSize: '0.72rem', background: 'rgba(0, 180, 216, 0.3)', borderColor: '#00b4d8', color: '#fff' }}>
+                        ⭐ TOP FEATURED
+                      </span>
+                    )}
+                  </div>
                   <span style={{ fontSize: '0.8rem', color: 'var(--text-subtle)', fontWeight: 600 }}>
                     {project.category}
                   </span>
