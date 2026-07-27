@@ -257,7 +257,7 @@ export default function Certificates() {
                   </a>
                 )}
                 <a
-                  href="/resume.html"
+                  href="./resume.html"
                   target="_blank"
                   rel="noreferrer"
                   className="btn-primary"

@@ -55,7 +55,7 @@ export default function Navbar() {
           <a href="#projects" className="nav-link" style={linkStyle}>Projects</a>
           <a href="#skills" className="nav-link" style={linkStyle}>Skills</a>
           <a href="#certifications" className="nav-link" style={linkStyle}>Certifications</a>
-          <a href="/resume.html" target="_blank" rel="noreferrer" className="nav-link flex-row items-center gap-xs" style={{ ...linkStyle, color: 'var(--cyan-accent)', fontWeight: 600 }}>
+          <a href="./resume.html" target="_blank" rel="noreferrer" className="nav-link flex-row items-center gap-xs" style={{ ...linkStyle, color: 'var(--cyan-accent)', fontWeight: 600 }}>
             <FileText size={15} /> Resume ↗
           </a>
           <a href="#contact" className="nav-link" style={linkStyle}>Contact</a>

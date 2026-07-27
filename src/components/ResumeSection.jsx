@@ -48,7 +48,7 @@ export default function ResumeSection() {
             Comprehensive breakdown of academic background, engineering experience, and technical achievements formatted for HR evaluation.
           </p>
 
-          <a href="/resume.html" target="_blank" rel="noreferrer" className="btn-primary" style={{ padding: '0.7rem 1.6rem', fontSize: '0.95rem' }}>
+          <a href="./resume.html" target="_blank" rel="noreferrer" className="btn-primary" style={{ padding: '0.7rem 1.6rem', fontSize: '0.95rem' }}>
             <ExternalLink size={18} /> Open Full Resume Document in New Tab ↗
           </a>
         </div>
@@ -125,7 +125,7 @@ export default function ResumeSection() {
               </h3>
             </div>
             <div className="flex-row gap-sm">
-              <a href="/resume.html" target="_blank" rel="noreferrer" className="btn-primary" style={{ padding: '0.5rem 1rem', fontSize: '0.85rem' }}>
+              <a href="./resume.html" target="_blank" rel="noreferrer" className="btn-primary" style={{ padding: '0.5rem 1rem', fontSize: '0.85rem' }}>
                 <FileText size={16} /> Open Full Resume Document ↗
               </a>
               <button className="btn-secondary" onClick={() => setShowAnalyzer(!showAnalyzer)} style={{ padding: '0.5rem 1rem', fontSize: '0.85rem' }}>

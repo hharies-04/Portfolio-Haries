@@ -93,7 +93,7 @@ export default function Hero() {
             <a href="#projects" className="btn-primary">
               View GitHub Projects <ArrowRight size={18} />
             </a>
-            <a href="/resume.html" target="_blank" rel="noreferrer" className="btn-secondary">
+            <a href="./resume.html" target="_blank" rel="noreferrer" className="btn-secondary">
               <FileText size={18} /> Resume & Overview ↗
             </a>
           </div>
