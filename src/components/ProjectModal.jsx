@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { X, ExternalLink, Play, Sparkles, Monitor, Globe, ShieldAlert, Cpu, Activity } from 'lucide-react';
+import { X, ExternalLink, Play, Sparkles, Monitor, Globe, ShieldAlert, Cpu, Activity, Eye } from 'lucide-react';
 import { GithubIcon } from './SocialIcons';
 
 export default function ProjectModal({ project, onClose }) {
@@ -23,6 +23,11 @@ export default function ProjectModal({ project, onClose }) {
   const [temperature, setTemperature] = useState(185);
   const [pressure, setPressure] = useState(12.4);
   const [reactorResult, setReactorResult] = useState(null);
+
+  // Medical OCT State
+  const [octCondition, setOctCondition] = useState('CNV');
+  const [retinalThickness, setRetinalThickness] = useState(420);
+  const [octResult, setOctResult] = useState(null);
 
   const handleRunMammo = () => {
     const riskScore = Math.min(99, Math.max(12, (biRads * 18 + massMargin * 8 + massShape * 7 + (age > 50 ? 10 : 0))));
@@ -63,6 +68,18 @@ export default function ProjectModal({ project, onClose }) {
       status: optimalTemp ? 'OPTIMAL FLOW REACTOR PARAMETERS' : 'SUB-OPTIMAL THERMAL REGIME',
       optimalTemp,
       efficiency: (85 + (pressure > 10 ? 8 : 2)).toFixed(1) + '%'
+    });
+  };
+
+  const handleRunOct = () => {
+    const isAbnormal = octCondition !== 'NORMAL' || retinalThickness > 320;
+    const conf = (94.2 + (retinalThickness > 350 ? 3.8 : 1.2)).toFixed(1);
+
+    setOctResult({
+      prediction: octCondition === 'CNV' ? 'Choroidal Neovascularization (CNV Detected)' : octCondition === 'DME' ? 'Diabetic Macular Edema (DME Detected)' : octCondition === 'DRUSEN' ? 'Drusen Macular Degeneration' : 'Normal Retinal Macula Structure',
+      isAbnormal,
+      confidence: conf + '%',
+      features: `CNN Deep Learning layer extracted retinal foveal thickness (${retinalThickness} µm) and fluid accumulation features.`
     });
   };
 
@@ -277,6 +294,65 @@ export default function ProjectModal({ project, onClose }) {
                 </div>
                 <div style={{ fontSize: '0.8rem', color: '#94a3b8', marginTop: '0.2rem' }}>
                   Process Energy Efficiency: <strong>{reactorResult.efficiency}</strong>
+                </div>
+              </div>
+            )}
+          </div>
+
+        ) : project.id === 'medical-imaging-oct' ? (
+
+          /* RETINAL OCT MEDICAL IMAGING CNN SIMULATOR */
+          <div
+            className="output-terminal"
+            style={{
+              marginBottom: '1.5rem',
+              background: '#0a0d1f',
+              border: '1px solid #10b981',
+              borderRadius: '12px',
+              padding: '1.5rem'
+            }}
+          >
+            <div className="flex-row items-center justify-between" style={{ marginBottom: '1rem', borderBottom: '1px dashed rgba(16, 185, 129, 0.4)', paddingBottom: '0.5rem' }}>
+              <span className="flex-row items-center gap-xs" style={{ color: '#34d399', fontWeight: 700, fontSize: '0.9rem' }}>
+                <Eye size={16} /> CNN RETINAL OCT IMAGE CLASSIFIER SIMULATOR
+              </span>
+              <span className="pulse-dot"></span>
+            </div>
+
+            <p style={{ color: '#94a3b8', fontSize: '0.85rem', marginBottom: '1rem' }}>
+              Select simulated OCT scan parameters and retinal foveal thickness to test CNN classification:
+            </p>
+
+            <div className="flex-row flex-wrap gap-md" style={{ marginBottom: '1rem' }}>
+              <div style={{ flex: '1 1 180px' }}>
+                <label style={{ display: 'block', fontSize: '0.8rem', color: '#cbd5e1' }}>OCT Scan Condition:</label>
+                <select value={octCondition} onChange={(e) => setOctCondition(e.target.value)} style={{ width: '100%', padding: '0.4rem', background: '#070a1a', color: '#fff', border: '1px solid #334155', borderRadius: '6px' }}>
+                  <option value="CNV">CNV (Choroidal Neovascularization)</option>
+                  <option value="DME">DME (Diabetic Macular Edema)</option>
+                  <option value="DRUSEN">Drusen (Early AMD)</option>
+                  <option value="NORMAL">Normal Retinal Scan</option>
+                </select>
+              </div>
+              <div style={{ flex: '1 1 180px' }}>
+                <label style={{ display: 'block', fontSize: '0.8rem', color: '#cbd5e1' }}>Retinal Thickness: {retinalThickness} µm</label>
+                <input type="range" min="180" max="650" step="10" value={retinalThickness} onChange={(e) => setRetinalThickness(Number(e.target.value))} style={{ width: '100%' }} />
+              </div>
+            </div>
+
+            <button className="btn-primary" onClick={handleRunOct} style={{ padding: '0.6rem 1.2rem', fontSize: '0.85rem', background: 'linear-gradient(135deg, #059669, #10b981)' }}>
+              <Play size={14} /> Run CNN Retinal Disease Classifier
+            </button>
+
+            {octResult && (
+              <div style={{ marginTop: '1.2rem', padding: '1rem', background: octResult.isAbnormal ? 'rgba(239, 68, 68, 0.15)' : 'rgba(34, 197, 94, 0.15)', border: `1px solid ${octResult.isAbnormal ? '#ef4444' : '#22c55e'}`, borderRadius: '8px' }}>
+                <div style={{ fontSize: '1rem', fontWeight: 700, color: octResult.isAbnormal ? '#fca5a5' : '#86efac' }}>
+                  CNN Diagnostic Result: {octResult.prediction}
+                </div>
+                <div style={{ fontSize: '0.85rem', color: '#e2e8f0', marginTop: '0.3rem' }}>
+                  Model Confidence: <strong>{octResult.confidence}</strong>
+                </div>
+                <div style={{ fontSize: '0.8rem', color: '#94a3b8', marginTop: '0.2rem' }}>
+                  {octResult.features}
                 </div>
               </div>
             )}

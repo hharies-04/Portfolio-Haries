@@ -95,7 +95,7 @@ export const projects = [
     description: "CNN-based retinal disease classification from OCT images — automatically detects CNV, DME, Drusen, and Normal conditions using deep learning and image augmentation techniques.",
     tags: ["Python", "Computer Vision", "CNN", "Deep Learning", "Medical AI"],
     githubUrl: "https://github.com/hharies-04/Medical-Imaging-OCT",
-    liveUrl: "https://hharies-04.github.io/Medical-Imaging-OCT/",
+    liveUrl: "https://github.com/hharies-04/Medical-Imaging-OCT",
     language: "Python / TensorFlow",
     outputType: "ml_simulation",
     outputDetails: {
